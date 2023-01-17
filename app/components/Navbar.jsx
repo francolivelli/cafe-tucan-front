@@ -1,29 +1,47 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
-import "./Navbar.css";
+import { Box, Grid, GridItem, Icon } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { MdSettings } from 'react-icons/md'
 
 const Navbar = () => {
   return (
     <Box
-      h={{ sm: "18vw", md: "10vw", lg: "5vw" }}
+      h={{ xs: "20vw", sm: "16vw", md: "12vw", lg: "7vw", xl: "4vw" }}
       w="100vp"
-      bg="black"
-      color="white">
+      borderBottomWidth="1px"
+      borderBottomColor="white"
+      backgroundColor="black">
       <Grid
-        h="100%"
-        w="100%"
-        bg="red"
         templateRows="repeat(1, 1fr)"
-        templateColumns="repeat(2, 1fr)">
+        templateColumns="repeat(3, 1fr)"
+        height="100%"
+        width="100%"
+        display="flex"
+        justifyContent="space-between">
         <GridItem
-          rowStart="1"
-          rowEnd="1"
-          bg="blue"
+          colStart={1}
+          width={{ xs: "20vw", sm: "16vw", md: "12vw", lg: "7vw", xl: "4vw" }}
           display="flex"
           alignItems="center"
           justifyContent="center">
-          <img src="logo_navbar_black.jpeg" id="logo"/>
+          <Icon as={MdSettings}
+            color="white"
+            padding="2px"
+            boxSize={8}></Icon>
         </GridItem>
-        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colStart={2} display="flex" height="100%" padding={2}>
+          <img src="logo_black.jpeg" />
+        </GridItem>
+        <GridItem
+          colStart={3}
+          width={{ xs: "20vw", sm: "16vw", md: "12vw", lg: "7vw", xl: "4vw" }}
+          display="flex"
+          alignItems="center"
+          justifyContent="center">
+          <HamburgerIcon
+            color="white"
+            padding="2px"
+            boxSize={8}></HamburgerIcon>
+        </GridItem>
       </Grid>
     </Box>
   );
