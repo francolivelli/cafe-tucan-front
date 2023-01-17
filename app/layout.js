@@ -1,4 +1,5 @@
 "use client"
+import "../styles/globals.css"
 import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "./components/Navbar";
 import theme from '../styles/theme';
@@ -6,7 +7,9 @@ import theme from '../styles/theme';
 const RootLayout = ({ children }) => {
   return (
     <html>
-      <head></head>
+      <head>
+        <title>Café Tucán</title>
+      </head>
       <body>
         <ChakraProvider theme={theme}>
           <Navbar />
